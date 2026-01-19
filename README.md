@@ -61,6 +61,8 @@ aws s3 cp s3://your-bucket-name/merged.csv data/dataset.csv
 
 ```
 
+We can also use the parameter `USE_S3 = True`, to make sure the code will download the csv automatically from the bucket.
+
 ### 2. Preprocessing & Training
 
 Run the `pobl_ml.ipynb` notebook. The script performs:
@@ -75,7 +77,6 @@ Run the `pobl_ml.ipynb` notebook. The script performs:
 
  
 **Model Selection:** Compares K-Means, Ward, and HDBSCAN, ultimately selecting HDBSCAN for its superior ability to identify noise as potential attacks.
-
 
 
 ---
@@ -100,6 +101,8 @@ Once you have identified a model suitable for production, upload the artifacts b
 aws s3 cp models/ s3://your-bucket-name/production_models/ --recursive
 
 ```
+
+We can also use the parameter `USE_S3 = True`, to make sure the code will upload the results automatically.
 
 ---
 
